@@ -11,25 +11,25 @@ extras_require = {
         "ape-polygon",  # For testing against another network named 'mainnet'
     ],
     "lint": [
-        "black>=24.4.2,<25",  # Auto-formatter and linter
-        "mypy>=1.10.0,<2",  # Static type analyzer
+        "black>=24.10.0,<25",  # Auto-formatter and linter
+        "mypy>=1.13.0,<2",  # Static type analyzer
         "types-setuptools",  # Needed for mypy type shed
-        "flake8>=7.0.0,<8",  # Style linter
+        "flake8>=7.1.1,<8",  # Style linter
         "flake8-breakpoint>=1.1.0,<2",  # Detect breakpoints left in code
         "flake8-print>=5.0.0,<6",  # Detect print statements left in code
+        "flake8-pydantic",  # For detecting issues with Pydantic models
+        "flake8-type-checking",  # Detect imports to move in/out of type-checking blocks
         "isort>=5.13.2,<6",  # Import sorting linter
-        "mdformat>=0.7.17",  # Auto-formatter for markdown
+        "mdformat>=0.7.19",  # Auto-formatter for markdown
         "mdformat-gfm>=0.3.5",  # Needed for formatting GitHub-flavored markdown
         "mdformat-frontmatter>=0.4.1",  # Needed for frontmatters-style headers in issue templates
-        "mdformat-pyproject>=0.0.1",  # Allows configuring in pyproject.toml
+        "mdformat-pyproject>=0.0.2",  # Allows configuring in pyproject.toml
     ],
     "doc": [
-        "Sphinx>=6.1.3,<7",  # Documentation generator
-        "sphinx_rtd_theme>=1.2.0,<2",  # Readthedocs.org theme
-        "towncrier>=19.2.0, <20",  # Generate release notes
+        "sphinx-ape",
     ],
     "release": [  # `release` GitHub Action job uses this
-        "setuptools",  # Installation tool
+        "setuptools>=75.6.0",  # Installation tool
         "setuptools-scm",  # Installation tool
         "wheel",  # Packaging tool
         "twine",  # Package upload tool
@@ -69,7 +69,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "eth-ape>=0.8.1,<0.9",
-        "web3",  # Use same version as eth-ape
+        "web3>=6.20.1,<8",
     ],
     python_requires=">=3.9,<4",
     extras_require=extras_require,
